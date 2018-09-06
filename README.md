@@ -13,7 +13,7 @@ sudo yum install python36u python36u-pip
 sudo ln -sf /usr/bin/python3.6 /usr/bin/python3 
 sudo ln -sf /usr/bin/pip3.6 /usr/bin/pip3
 
-sudo pip3 install flask, flask-aip, gunicorn
+sudo pip3 install flask flask-api gunicorn
 
 ```
 
