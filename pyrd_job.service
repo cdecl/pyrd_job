@@ -1,0 +1,17 @@
+[Unit]
+Description=Rundeck Job Run Proxy Servc
+
+[Service]
+WorkingDirectory=/var/pythonapp/pyrd_job
+ExecStart=/usr/bin/gunicorn -b :8000 --reload index:app 
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+SyslogIdentifier=pyrd_job
+User=rundeck
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
+
